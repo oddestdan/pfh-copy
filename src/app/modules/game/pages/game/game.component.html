@@ -1,20 +1,25 @@
 <div class="game">
   <div class="game__column">
     <div class="game__players">
-          <!--Players list component-->
+      <!--Players list component-->
     </div>
   </div>
   <div class="game__column">
     <div class="game__timer">
+      <app-timer></app-timer>
       <!--Timer component-->
     </div>
-    <div class="game__playground">
-      <!--ng-switch-->
+    <div class="game__playground" [ngSwitch]="currentView">
+      <app-phrase-view *ngSwitchCase="'phrase-view'"></app-phrase-view>
+      <app-tee-vote-view *ngSwitchCase="'tee-vote-view'"></app-tee-vote-view>
+      <app-tee-result-view *ngSwitchCase="'tee-result-view'"></app-tee-result-view>
+
+      <app-draw-view *ngSwitchDefault></app-draw-view>
     </div>
   </div>
   <div class="game__column">
     <div class="game__chat">
-      <!--Chat component-->
+      <app-chat></app-chat>
     </div>
   </div>
 </div>
