@@ -4,11 +4,16 @@ import {LobbyComponent} from './pages/lobby/lobby.component';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {AuthorizationInterceptor} from '../../core/interceptors/authorization.interceptor';
 import {GameComponent} from './pages/game/game.component';
+import { TestComponent } from './pages/test/test.component';
 
 const routes: Routes = [
   {
     path: 'lobby',
     component: LobbyComponent
+  },
+  {
+    path: 'test',
+    component: TestComponent
   },
   {
     path: 'play',

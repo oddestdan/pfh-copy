@@ -1,0 +1,17 @@
+
+<h3 class="join__code">{{ roomCode }}</h3>
+
+<div class="lobby__you">
+  <h3>You</h3>
+  <div class="video-wrapper">
+    <video muted autoplay playsinline #userVideo></video>
+  </div>
+</div>
+<ul class="lobby__peers">
+  <h3>Your peers</h3>
+  <li *ngFor="let peer of peerService.peers" class="video-wrapper">
+    <div class="video-wrapper">
+      <app-video [peer]="peer"></app-video>
+    </div>
+</li>
+</ul>

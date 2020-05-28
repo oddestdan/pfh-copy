@@ -1,9 +1,5 @@
 .video {
+  background-color: rgba(36, 194, 128, 0.6);
   width: 100%;
-  border: 2px solid #cec4ce;
-
-  &__wrapper {
-    width: 100px;
-    border: 2px solid #c5f3e6;
-  }
+  border-radius: 50%;;
 }

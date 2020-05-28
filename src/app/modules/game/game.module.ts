@@ -16,6 +16,10 @@ import { DrawViewComponent } from './pages/game/game-views/draw-view/draw-view.c
 import { PhraseViewComponent } from './pages/game/game-views/phrase-view/phrase-view.component';
 import { TeeVoteViewComponent } from './pages/game/game-views/tee-vote-view/tee-vote-view.component';
 import { TeeResultViewComponent } from './pages/game/game-views/tee-result-view/tee-result-view.component';
+import { TestComponent } from './pages/test/test.component';
+
+import { SocketService } from './services/socket.service';
+import { PeerService } from './services/peer.service';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,7 @@ import { TeeResultViewComponent } from './pages/game/game-views/tee-result-view/
     PhraseViewComponent,
     TeeVoteViewComponent,
     TeeResultViewComponent,
+    TestComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +43,10 @@ import { TeeResultViewComponent } from './pages/game/game-views/tee-result-view/
     GameRoutingModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  providers: [
+    SocketService,
+    PeerService
   ]
 })
 export class GameModule {

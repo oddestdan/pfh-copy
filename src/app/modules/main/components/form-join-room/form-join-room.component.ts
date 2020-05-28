@@ -39,7 +39,7 @@ export class FormJoinRoomComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.notifier))
       .subscribe(data => {
         this.dataStore.setRoomCode(data.payload);
-        this.router.navigate(['game/lobby']);
+        this.router.navigate(['game/test']); // TODO: Remove - Dev purposes
         this.dialogRef.close();
       });
   }
