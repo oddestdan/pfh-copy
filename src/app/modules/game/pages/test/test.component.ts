@@ -65,8 +65,14 @@ export class TestComponent implements AfterViewInit {
           console.log(payload);
 
           // find correct peer to signal to
-          const item = this.peerService.peers.find(p =>  p.id === payload.id);
-          item.data.signal(payload.signal);
+          const peer = this.peerService.findPeer(payload.id);
+          peer.data.signal(payload.signal);
+        });
+
+        this.socketService.on('user-disconnected', (payload) => {
+          console.log('Heard that some peer disconnected', payload.id);
+
+          this.peerService.destroyPeer(payload.id);
         });
 
         this.socketService.emit('join room', { roomCode: this.roomCode });

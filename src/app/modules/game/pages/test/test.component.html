@@ -10,8 +10,6 @@
 <ul class="lobby__peers">
   <h3>Your peers</h3>
   <li *ngFor="let peer of peerService.peers" class="video-wrapper">
-    <div class="video-wrapper">
-      <app-video [peer]="peer"></app-video>
-    </div>
-</li>
+    <app-video [peer]="peer"></app-video>
+  </li>
 </ul>

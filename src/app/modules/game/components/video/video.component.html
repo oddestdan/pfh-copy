@@ -1,1 +1,12 @@
-<video muted playsinline autoplay class="video" #videoPlayer></video>
+<div class="video__wrapper" (click)="toggleMute()">
+  <span class="video__overlay-message"
+    >Click to {{ isMuted ? "unmute" : "mute" }}
+  </span>
+  <video
+    [muted]="isMuted"
+    playsinline
+    autoplay
+    #videoPlayer
+    class="video"
+  ></video>
+</div>
